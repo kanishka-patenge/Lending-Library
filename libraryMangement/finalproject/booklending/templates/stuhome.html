@@ -1,0 +1,85 @@
+{%load static%}
+<html> 
+<head>
+<title> Home Page </title>
+<style> 
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-image: url("/static/background.jpg");
+}
+button { 
+       background-color:#425664; 
+       width: 100px;
+        color: orange; 
+        padding: 15px; 
+        margin: 10px 0px; 
+        border: none; 
+        cursor: pointer; 
+         } 
+ form { 
+        border: 3px solid #f1f1f1;
+        width:550px; 
+    } 
+ input[type=text], input[type=password] { 
+        width: 500px; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        border: 2px #C6AD8F; 
+        box-sizing: border-box; 
+    }    
+ button:hover { 
+        opacity: 0.7; 
+    } 
+      
+   
+ .container {     
+        padding: 25px;
+        height:100%;
+        width:500px; 
+        background-color:#C6AD8F;
+    } 
+ .container2 {     
+        padding: 25px;
+        height:200px;
+        width:500px; 
+        background-color:#C6AD8F;
+    } 
+</style> 
+</head>  
+<body>  
+     
+    <center>
+    <form>
+        <div class="container"> 
+            <center> <h1> Home page </h1> </center> 
+            <a href="{% url 'stulogout' %}">log out</a>
+
+            <table border="2">
+                <tr>
+                    <th>bookid</th>
+                    <th>book name</th>
+                    <th>author name</th>
+                    <th>published by</th>
+                    <th>total copies</th>
+                    <th>avilable copies</th>
+               </tr>
+            
+                {%for x in att%}
+                 <tr>
+                     <td>{{x.bookid}}</td>
+                     <td>{{x.name}}</td>
+                     <td>{{x.author}}</td>
+                     <td>{{x.publisher}}</td>
+                     <td>{{x.copies}}</td>
+                     <td>{{x.avl}}</td>
+                </tr>
+
+                 {%endfor%}
+             </table>
+
+             
+        </div> 
+    </form>
+    </center>   
+</body>   
+</html>

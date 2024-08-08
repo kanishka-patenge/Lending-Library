@@ -1,0 +1,79 @@
+{%load static%}
+<html> 
+<head>
+<title> Registration Page </title>
+<style> 
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-image: url("/static/background.jpg");
+}
+button { 
+       background-color:#425664; 
+       width: 100px;
+       height:50px;
+        color: orange; 
+        padding: 15px; 
+        margin: 10px 0px; 
+        border: none;
+        cursor: pointer; 
+         } 
+ form { 
+        border: 3px solid #f1f1f1;
+        width:550px; 
+    } 
+ input[type=text], input[type=password] , input[type=email] { 
+        width: 500px;
+        height:30; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px #C6AD8F; 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+      
+   
+ .container {     
+        padding: 25px;
+        height:700px;
+        width:500px; 
+        background-color:#C6AD8F;
+    } 
+</style> 
+</head>  
+<body>   
+    <center>
+    <form action = 'signup' method = 'post'>
+        {%csrf_token%}
+        <div class="container"> 
+            <h1>Student registration form</h1> 
+            <label><font size="4px">Name :</font></label> 
+            <input type="text" placeholder="Enter Name" name="name" required>
+            <label><font size="4px">Username :</font></label> 
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label><font size="4px">Password :</font></label> 
+            <input type="password" placeholder="Enter Password" name="password" required><br>
+            <label><font size="4px">Branch :</font></label> 
+            <input type="text" placeholder="Enter Branch" name="branch" required>
+            <label><font size="4px">Year :</font></label> 
+            <input type="text" placeholder="Enter Year" name="year" required><br>
+            <label><font size="4px">Email-id :</font></label> 
+            <input type="email" placeholder="Enter Email-id" name="emailid" required><br>
+            <label><font size="4px">Contact :</font></label> 
+            <input type="text" placeholder="Enter Contact" name="contact" required>
+            <label><font size="4px">Address :</font></label> 
+            <input type="text" placeholder="Enter Address" name="address" required>
+            <center>
+            <button type="submit" name="register">Register</button>
+            <button type="submit" name="login"><a href="{% url 'stulogin' %}" >login</a></button>
+            <button type="reset" name="reset">Reset</button>
+            </center>
+            
+             
+        </div> 
+    </form>
+    </center>   
+</body>   
+</html>

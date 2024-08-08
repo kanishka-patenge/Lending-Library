@@ -1,0 +1,117 @@
+<!Doctype Html>
+<Html>   
+<Head>    
+<Title>   
+Admin Page
+</Title>
+<style type=text/css> 
+body 
+{
+height: 125vh;
+margin-top: 80px;
+padding: 30px;
+background-size: cover;
+font-family: sans-serif;
+}
+header {
+background-color: gold;
+position: fixed;
+left: 0;
+right: 0;
+top: 5px;
+height: 30px;
+display: flex;
+align-items: center;
+box-shadow: 0 0 25px 0 black;
+}
+header * {
+display: inline;
+}
+header li {
+margin: 20px;
+}
+header li a {
+color: blue;
+text-decoration: none;
+}
+</style> 
+</Head>
+<Body bgcolor='#425664'>
+<form action = "copiesremove" method = "post">
+  {%csrf_token%}
+<hr> 
+<center><font size=10 color='gold'>Library management</font>
+</center>
+<hr>
+  </table border='2' width=50%>
+                    </td>
+               </tr>
+		<tr>
+			<td>
+				<table border = "1" align = "center" height = "auto">
+                        <tr>
+                            <td colspan = '2'> <h3 align = "center">Please Add Correct Details</h3> </td>
+                        </tr>
+                        <tr>
+<td>
+Book Id
+</td>
+<td>
+<input type='text' name='bookid'>
+</td>
+</tr>
+<tr>
+<td>
+No.of.Copies del
+</td>
+<td>
+<input type='text' name='add'>
+</td>
+</tr>
+<tr>
+<td>
+AccNo
+</td>
+<td>
+<input type='text' name='accno'>
+</td>
+</tr>
+<tr>
+<td>
+<input type='submit' name='submit'>
+</td>
+</tr>
+</table>
+<header>
+<nav>
+  <ul>
+
+    <li>
+    <a href="{% url 'add' %}"> Add </a>
+    </li>
+    <li>
+    <a href="{% url 'delete' %}">Delete </a>
+    </li>
+    <li>
+    <a href="{% url 'copiesadd' %}"> add Copies</a>
+    </li>
+    <li> <a href="{% url 'copiesremove' %}"> Copies Del </a>
+    </li>
+    <li>
+    <a href="{% url 'lend' %}">Lending </a>
+    </li>
+    <li>
+    <a href="{% url 'returnbook' %}"> Return</a>
+    </li>
+    <li>
+        <a href="{% url 'adminlogout' %}"> logout </a>
+        </li>
+    
+    </ul>
+</nav>
+</header>
+</form>
+</Body> 
+</Html>
+
+ 

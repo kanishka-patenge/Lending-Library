@@ -1,0 +1,60 @@
+{%load static%}
+<html> 
+<head>
+<title> Login Page </title>
+<style> 
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-image: url("/static/background.jpg");
+}
+button { 
+       background-color:#425664; 
+       width: 100px;
+        color: orange; 
+        padding: 15px; 
+        margin: 10px 0px; 
+        border: none; 
+        cursor: pointer; 
+         } 
+ form { 
+        border: 3px solid #f1f1f1;
+        width:550px; 
+    } 
+ input[type=text], input[type=password] { 
+        width: 500px; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px #C6AD8F; 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+      
+   
+ .container {     
+        padding: 25px;
+        height:300px;
+        width:500px; 
+        background-color:#C6AD8F;
+    } 
+</style> 
+</head>  
+<body>  
+    <center>
+    <form action = "stulogin" method="post">
+        {%csrf_token%}
+        <div class="container"> 
+            <center> <h1> Student Login Form </h1> </center>
+            <label><font size="4px">Username :</font></label> 
+            <input type="text" placeholder="Enter Username" name="username" required><br>
+            <label><font size="4px">Password :</font></label> 
+            <input type="password" placeholder="Enter Password" name="password" required><br>
+            <button type="submit" name="login">Login</button>
+             
+        </div> 
+    </form>
+    </center>   
+</body>   
+</html>
